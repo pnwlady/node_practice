@@ -2,7 +2,8 @@
 var request = require('request');
 var url = require('url');
 
-app.get(‘/tweets/:username’, function(req, response) {
+app.get(‘tweets/:username’, function(req, response) {
+    req.sendFile(__dirname + '/tweets.html');
 
     var username = req.param.username;
 
