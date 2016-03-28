@@ -10,8 +10,10 @@ var quotes = {
 
   app.get('/quotes/:name', function(req, res) {
       var quote = quotes[req.params.name];
-
-
+      res.render('quote.ejs', {
+          name: req.params.name,
+          quote: quote
+      });
   });
 
   app.listen(8080);
